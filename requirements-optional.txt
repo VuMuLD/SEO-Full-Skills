@@ -1,0 +1,26 @@
+# SEO All-in-One — optional dependencies. Install only what you need.
+#   python -m pip install -r requirements-optional.txt
+#   python -m playwright install chromium        # after installing playwright
+
+# Headless rendering, screenshots, JS-SEO and mobile checks
+playwright>=1.50.0,<2.0.0
+Pillow>=10.4.0                     # visual_regression_snapshot.py
+
+# Google APIs: Search Console, URL Inspection, Indexing API, PageSpeed/CrUX helpers, YouTube, NLP
+google-api-python-client>=2.150.0,<3.0.0
+google-auth>=2.35.0,<3.0.0
+google-auth-httplib2>=0.2.0,<1.0.0
+google-auth-oauthlib>=1.2.0,<2.0.0
+google-analytics-data>=0.18.0,<1.0.0   # ga4_report.py
+google-ads>=25.0.0                     # keyword_planner.py (needs a Google Ads developer token)
+
+# Professional PDF / Excel reports (google_report.py)
+matplotlib>=3.9.0,<4.0.0
+numpy>=2.0.0,<3.0.0
+weasyprint>=62.0                   # needs GTK/Pango runtime on Windows
+openpyxl>=3.1.5,<4.0.0
+pypdf>=4.0.0
+
+# Node.js tools (install separately, not via pip):
+#   Unlighthouse:  npx unlighthouse-ci   (Node 18+)  -> unlighthouse_run.py
+#   Lighthouse:    npm i -g lighthouse                -> lighthouse_runner.py
